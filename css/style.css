@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body#tela_inicial {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../img/zumbi_inicial.gif"); /* coloca aqui a tua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.inicio {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* camada escura por cima da imagem, sem alterar a imagem original */
+.camada_escura {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 0, 20, 0.35),
+    rgba(10, 0, 30, 0.55),
+    rgba(0, 0, 0, 0.65)
+  );
+  backdrop-filter: blur(1px);
+}
+
+.menu_inicial {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 700px;
+  padding: 40px 30px;
+  border-radius: 24px;
+  background: rgba(20, 10, 45, 0.35);
+  border: 2px solid rgba(0, 255, 255, 0.25);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.15),
+    0 0 40px rgba(255, 0, 170, 0.12),
+    inset 0 0 20px rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.titulo_jogo {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  color: #ff2ea6;
+  letter-spacing: 6px;
+  margin-bottom: 12px;
+  text-shadow:
+    0 0 5px #ff2ea6,
+    0 0 10px #ff2ea6,
+    0 0 20px #8a2eff,
+    0 0 35px #8a2eff;
+}
+
+.subtitulo_jogo {
+  color: #d9d4ff;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+}
+
+.botoes_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.botao_menu {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, rgba(255, 0, 170, 0.85), rgba(90, 0, 255, 0.85));
+  border: 1px solid rgba(0, 255, 255, 0.35);
+  box-shadow:
+    0 0 12px rgba(255, 0, 170, 0.35),
+    0 0 25px rgba(0, 255, 255, 0.18);
+  transition: 0.25s ease;
+}
+
+.botao_menu:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 0 18px rgba(255, 0, 170, 0.55),
+    0 0 35px rgba(0, 255, 255, 0.28);
+  filter: brightness(1.1);
+}
+
+.botao_menu:active {
+  transform: scale(0.98);
+}
+
+/* detalhe opcional de brilho animado */
+.menu_inicial::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 2px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #00f7ff, #ff2ea6, #8a2eff, #00f7ff);
+  background-size: 300% 100%;
+  animation: brilhoTopo 5s linear infinite;
+}
+
