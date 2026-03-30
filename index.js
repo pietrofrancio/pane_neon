@@ -184,6 +184,7 @@ function desenhaComTremor() {
         desenha();
     }
 }
+
 function atualiza() {
     if (jogar) {
         // Move o fundo
@@ -199,6 +200,13 @@ function atualiza() {
                 indiceFundoAtual = 0; 
             }
         }
+
+        // --- CÓDIGO NOVO AQUI ---
+        // Se o jogador estiver invencível, diminui o tempo a cada frame
+        if (player.tempoInvencivel > 0) {
+            player.tempoInvencivel -= 1;
+        }
+        // ------------------------
 
         // Restante da lógica
         player.mov_pulo();
