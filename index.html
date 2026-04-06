@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/inicio.js"defer></script>
   <title>Pane Neon</title>
 </head>
 <body id="tela_inicial">
@@ -14,26 +15,116 @@
     <div class="luzes_fundo"></div>
 
     <section class="menu_inicial">
-      <span class="selo_topo">SURVIVAL MODE</span>
-
-      <h1 class="titulo_jogo">
+<h1 class="titulo_jogo">
         <span>PANE</span>
         <span>NEON</span>
       </h1>
+      
 
-      <p class="subtitulo_jogo">Sobreviva à infestação na cidade elétrica.</p>
+      <p class="subtitulo_jogo">Sobreviva à infestação na cidade apocalíptica.</p>
+
+      <div class="seletor_jogadores">
+        <span class="opcao_jogador ativo" data-url="./html/game_1p.html">1 Jogador</span>
+        <span class="opcao_jogador" data-url="./html/game_2p.html">2 Jogadores</span>
+      </div>
 
       <nav class="botoes_menu">
-        <a href="./html/game.html" class="botao_menu">Jogar</a>
-        <a href="./html/sobre.html" class="botao_menu">Sobre</a>
-        <a href="./html/tutorial.html" class="botao_menu">Como Jogar</a>
+        <a href="./html/game_1p.html" id="btn_jogar" class="botao_menu">Jogar</a>
+       <button id="abrir_sobre" class="botao_menu">Sobre</button>
+        <button id="abrir_como_jogar" class="botao_menu">Como Jogar</button>
       </nav>
-
-      <div class="rodape_menu">
-        <span class="status_online"></span>
-        <p>Neon District // Zona infectada</p>
-      </div>
     </section>
+
+    <div id="popup_sobre" class="popup">
+  <div class="popup_conteudo">
+    <button id="fechar_sobre" class="fechar_popup">X</button>
+
+    <h2>Sobre o Desenvolvedor</h2>
+    <img src="./img/eu.jpg" class="img_dev">
+
+    <p>
+      Olá! Eu sou o desenvolvedor de <strong>Pane Neon</strong>.
+      Este jogo foi criado com inspiração cyberpunk, pixel art e sobrevivência
+      em uma cidade tomada pelo caos.
+    </p>
+
+    <p>
+      O projeto foi desenvolvido para aprender e evoluir em HTML, CSS e JavaScript,
+      misturando visual neon com ação estilo runner.
+    </p>
+  </div>
+</div>
+
+<div id="popup_como_jogar" class="popup">
+  <div class="popup_conteudo popup_jogo">
+    <button id="fechar_como_jogar" class="fechar_popup">X</button>
+
+    <h2>Como Jogar</h2>
+
+    <p class="texto_resumo">
+      Você precisa sobreviver por <strong>150 segundos</strong>. Se o contador chegar a 0 e você ainda estiver vivo, vence.
+      Se perder todas as vidas antes disso, perde.
+    </p>
+
+    <div class="info_vidas">
+      <img src="./img/coracao_cheio.png" alt="Coração" class="icone_coracao">
+      <p>
+        Você começa com <strong>3 vidas</strong>.  
+        Perde vida ao bater no <strong>olho</strong> ou na <strong>mão zumbi</strong>.  
+        Recupera <strong>+1 vida</strong> ao pegar o <strong>kit médico</strong>.
+      </p>
+    </div>
+
+    <div class="itens_jogo">
+      <div class="item_jogo">
+        <img src="./img/olho.png" alt="Olho inimigo">
+        <h3>Olho</h3>
+        <p>Obstáculo perigoso. Se encostar, você perde 1 vida e 1 ponto.</p>
+      </div>
+
+      <div class="item_jogo">
+        <img src="./img/mao.png" alt="Mão zumbi">
+        <h3>Mão Zumbi</h3>
+        <p>Também causa dano. Encostar nela tira 1 vida e 1 ponto.</p>
+      </div>
+
+      <div class="item_jogo">
+        <img src="./img/kitMedico.png" alt="Kit médico">
+        <h3>Kit Médico</h3>
+        <p>Item de cura. Ao pegar, você ganha 1 vida e também 1 ponto.</p>
+      </div>
+    </div>
+
+    <div class="bloco_regras">
+      <h3>Pontos e Fases</h3>
+      <p>
+        Quando você sobrevive, desvia dos obstáculos e se cura, ganha pontos.
+        Se colidir com obstáculos, perde 1 ponto.
+      </p>
+      <p>
+        <strong>0 a 49 pontos:</strong> Fase 1<br>
+        <strong>50 a 99 pontos:</strong> Fase 2<br>
+        <strong>100 ou mais:</strong> Fase 3
+      </p>
+      <p>
+        O jogo vai ficando mais difícil, mais rápido e mais escuro com o passar do tempo.
+      </p>
+    </div>
+
+    <div class="bloco_controles">
+      <h3>Controles</h3>
+      <p>
+        <strong>Player 1:</strong> menino, tecla <strong>W</strong><br>
+        <strong>Player 2:</strong> menina, tecla <strong>Seta para Cima</strong>
+      </p>
+      <p>
+        Você pode jogar sozinho ou com 2 jogadores.
+      </p>
+    </div>
+  </div>
+</div>
+
+
   </main>
 
 </body>
