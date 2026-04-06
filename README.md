@@ -4,10 +4,6 @@
   <img src="./img/logo.png" width="500"/>
 </p>
 
-<p align="center">
-  <b>Um endless runner cyberpunk em pixel art onde fugir é sobreviver.</b>
-</p>
-
 ---
 
 ## 🎮 Sobre o Jogo
