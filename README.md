@@ -57,35 +57,51 @@ Quanto mais você joga… mais tenso fica.
 
 ---
 
+## 📋 Requisitos do Sistema
+
+---
+
+## 🔹 Requisitos Funcionais
+
+| Código | Descrição |
+|--------|----------|
+| **RF01** | O sistema deve permitir que o jogador realize saltos para desviar de obstáculos durante a corrida. |
+| **RF02** | O jogador deve iniciar com **3 vidas**. Ao colidir com obstáculos perigosos, uma vida deve ser reduzida. |
+| **RF03** | O jogo deve possuir um sistema de **pontuação exibido na tela**, incrementado com o tempo e ações do jogador. |
+| **RF04** | Devem existir **itens coletáveis** que concedam pontos ou recuperação de vida. |
+| **RF05** | Devem existir **obstáculos** que causem dano ao jogador ao colidir. |
+| **RF06** | O jogo deve possuir **3 fases distintas**, com aumento progressivo de dificuldade, baseadas na pontuação. |
+| **RF07** | O sistema deve possuir um **temporizador**. Ao final do tempo, o jogador vence. |
+| **RF08** | O jogo deve conter as seguintes telas: **Menu Inicial, Tela de Jogo, Tela de Vitória e Tela de Derrota**. |
+| **RF09** | Deve existir uma tela **"Sobre"** contendo informações do desenvolvedor e do Product Owner. |
+| **RF10** | O sistema deve permitir o **reinício do jogo** após o término da partida. |
+| **RF11** | O jogo deve possuir **efeitos sonoros** para ações como pulo, dano, cura e eventos de vitória/derrota. |
+
+---
+
+## ⚙️ Regras de Negócio
+
+| Código | Descrição |
+|--------|----------|
+| **RN01** | A dificuldade deve aumentar progressivamente a cada fase, elevando a velocidade e/ou a quantidade de inimigos. |
+| **RN02** | Cada fase deve apresentar um **cenário distinto**, indicando visualmente a progressão do jogo. |
+| **RN03** | O jogador vence apenas ao completar a **terceira fase com pelo menos 1 vida restante**. Caso contrário, deve ser exibida a tela de derrota. |
+| **RN04** | O jogo deve conter um **manual ou seção explicativa** com instruções de controle, sistema de pontuação, vidas e funcionamento dos coletáveis. |
+
+---
+
+## 🛠️ Requisitos Não Funcionais
+
+| Código | Descrição |
+|--------|----------|
+| **RNF01** | *(Tecnologia)* O sistema deve ser desenvolvido em **JavaScript**, compatível com navegadores modernos, sem necessidade de transpilação complexa. |
+| **RNF02** | *(Portabilidade)* O jogo deve ser executado diretamente no navegador utilizando **HTML5 Canvas**. |
+| **RNF03** | *(Usabilidade)* A interface deve ser otimizada para computadores, com resolução de **1920×1080 px**, garantindo visibilidade completa dos elementos. |
+| **RNF04** | *(Desempenho)* O jogo deve manter uma taxa de quadros estável (**60 FPS**) para garantir fluidez. |
+
+---
+
 ## ⚙️ Sistema do Jogo
-
-📋 Requisitos do Sistema
-🔹 Requisitos Funcionais
-Código	Descrição
-RF01	O sistema deve permitir que o jogador realize saltos para desviar de obstáculos durante a corrida.
-RF02	O jogador deve iniciar com 3 vidas. Ao colidir com obstáculos perigosos, uma vida deve ser reduzida.
-RF03	O jogo deve possuir um sistema de pontuação exibido na tela, incrementado com o tempo e ações do jogador.
-RF04	Devem existir itens coletáveis que concedam pontos ou recuperação de vida.
-RF05	Devem existir obstáculos que causem dano ao jogador ao colidir.
-RF06	O jogo deve possuir 3 fases distintas, com aumento progressivo de dificuldade, baseadas na pontuação.
-RF07	O sistema deve possuir um temporizador. Ao final do tempo, o jogador vence.
-RF08	O jogo deve conter as seguintes telas: Menu Inicial, Tela de Jogo, Tela de Vitória e Tela de Derrota.
-RF09	Deve existir uma tela "Sobre" contendo informações do desenvolvedor e do Product Owner.
-RF10	O sistema deve permitir o reinício do jogo após o término da partida.
-RF11	O jogo deve possuir efeitos sonoros para ações como pulo, dano, cura e eventos de vitória/derrota.
-⚙️ Regras de Negócio
-Código	Descrição
-RN01	A dificuldade deve aumentar progressivamente a cada fase, elevando a velocidade e/ou a quantidade de inimigos.
-RN02	Cada fase deve apresentar um cenário distinto, indicando visualmente a progressão do jogo.
-RN03	O jogador vence apenas ao completar a terceira fase com pelo menos 1 vida restante. Caso contrário, deve ser exibida a tela de derrota.
-RN04	O jogo deve conter um manual ou seção explicativa com instruções de controle, sistema de pontuação, vidas e funcionamento dos coletáveis.
-🛠️ Requisitos Não Funcionais
-Código	Descrição
-RNF01 (Tecnologia)	O sistema deve ser desenvolvido em JavaScript, compatível com navegadores modernos, sem necessidade de transpilação complexa.
-RNF02 (Portabilidade)	O jogo deve ser executado diretamente no navegador utilizando HTML5 Canvas.
-RNF03 (Usabilidade)	A interface deve ser otimizada para computadores, com resolução de 1920×1080 px, garantindo visibilidade completa dos elementos.
-RNF04 (Desempenho)	O jogo deve manter uma taxa de quadros estável (ex: 60 FPS) para garantir fluidez.
-
 
 ### 📈 Progressão
 
