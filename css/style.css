@@ -1,32 +1,30 @@
+/* P.S: A maior parte das sombras/texturas neons foram feitas com auxílio de I.A */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* --- ESTILO GERAL (Vale para o Jogo e para o Menu) --- */
 body {
-  margin: 0; /* Tira as bordas brancas padrão do navegador */
-  height: 100vh; /* Faz a página ocupar 100% da altura da tela */
-  display: flex; /* Ativa o Flexbox */
-  justify-content: center; /* Centraliza na horizontal */
-  align-items: center; /* Centraliza na vertical */
+  margin: 0; 
+  height: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
   background: url(../img/background_game.jpg) ;
 }
 
-/* --- ESTILO ESPECÍFICO (Vale APENAS para a tela inicial) --- */
 body#tela_inicial {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url("../img/zumbi_inicial.gif"); /* Coloca aqui a tua imagem */
+  background-image: url("../img/zumbi_inicial.gif"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden; /* Evita barras de rolagem indesejadas */
 }
 
-/* --- ESTILO DO CANVAS --- */
+
 canvas {
-  /* Sombra legal pra destacar a tela do jogo */
   border: 5px solid #17078b;
 }
 
@@ -36,29 +34,27 @@ canvas {
   gap: 30px;
   margin-bottom: 25px;
   color: white;
-  font-family: sans-serif; /* Mude para a fonte pixelada que você está usando */
+  font-family: sans-serif; 
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 .opcao_jogador {
   cursor: pointer;
-  opacity: 0.4; /* Apagado por padrão */
+  opacity: 0.4; 
   transition: all 0.3s ease;
   padding: 5px 10px;
-  border-bottom: 2px solid transparent;
+
 }
 
 .opcao_jogador:hover {
   opacity: 0.8;
 }
 
-/* Estado Ativo (Selecionado) */
 .opcao_jogador.ativo {
   opacity: 1;
   color: #ff00ff; /* Rosa neon */
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-  border-bottom: 2px solid #ff00ff;
 }
 
 .inicio {
@@ -70,8 +66,8 @@ canvas {
   justify-content: center;
 }
 
-/* camada escura por cima da imagem, sem alterar a imagem original */
 .camada_escura {
+  /* Feito com chat */
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -86,12 +82,13 @@ canvas {
 .menu_inicial {
   position: relative;
   z-index: 2;
-  width: 90%;
-  max-width: 700px;
+  width: 700px;
   padding: 40px 30px;
   border-radius: 24px;
   background: rgba(20, 10, 45, 0.35);
   border: 2px solid rgba(0, 255, 255, 0.25);
+
+  /* Feito com chat: */
   box-shadow:
     0 0 20px rgba(0, 255, 255, 0.15),
     0 0 40px rgba(255, 0, 170, 0.12),
@@ -359,4 +356,3 @@ canvas {
   line-height: 1.6;
   margin-bottom: 10px;
 }
-

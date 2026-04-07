@@ -1,65 +1,66 @@
-const opcoesJogadores = document.querySelectorAll('.opcao_jogador');
-const btnJogar = document.getElementById('btn_jogar');
+// MÚSICA
+const musica = new Audio('./music/tela_inicial.mp3')
+musica.loop = true
+musica.volume = 0.1
 
-const btnAbrirSobre = document.getElementById("abrir_sobre");
-const popupSobre = document.getElementById("popup_sobre");
-const btnFecharSobre = document.getElementById("fechar_sobre");
+document.body.addEventListener('click', () => {
+  musica.play()
+}, { once: true })
 
-const btnAbrirComoJogar = document.getElementById("abrir_como_jogar");
-const popupComoJogar = document.getElementById("popup_como_jogar");
-const btnFecharComoJogar = document.getElementById("fechar_como_jogar");
 
-const telaInicial = new Audio('./music/tela_inicial.mp3');
-telaInicial.loop = true;
-telaInicial.volume = 0.1;
 
-function tocarMusica() {
-  telaInicial.play();
-}
+// ESCOLHER JOGADOR
+const opcoes = document.querySelectorAll('.opcao_jogador')
+const btnJogar = document.getElementById('btn_jogar')
 
-/* POPUP SOBRE */
-btnAbrirSobre.addEventListener("click", function () {
-  popupSobre.classList.add("ativo");
-});
+opcoes.forEach(opcao => {
+  opcao.addEventListener('click', () => {
 
-btnFecharSobre.addEventListener("click", function () {
-  popupSobre.classList.remove("ativo");
-});
+    // tira o ativo de todos
+    opcoes.forEach(o => o.classList.remove('ativo'))
 
-popupSobre.addEventListener("click", function (e) {
+    // ativa o clicado
+    opcao.classList.add('ativo')
+
+    // muda o link do botão jogar
+    btnJogar.href = opcao.dataset.url
+  })
+})
+
+// POPUP SOBRE
+const abrirSobre = document.getElementById('abrir_sobre')
+const popupSobre = document.getElementById('popup_sobre')
+const fecharSobre = document.getElementById('fechar_sobre')
+
+abrirSobre.addEventListener('click', () => {
+  popupSobre.classList.add('ativo')
+})
+
+fecharSobre.addEventListener('click', () => {
+  popupSobre.classList.remove('ativo')
+})
+
+popupSobre.addEventListener('click', (e) => {
   if (e.target === popupSobre) {
-    popupSobre.classList.remove("ativo");
+    popupSobre.classList.remove('ativo')
   }
-});
+})
 
+// 📦 POPUP COMO JOGAR
+const abrirComo = document.getElementById('abrir_como_jogar')
+const popupComo = document.getElementById('popup_como_jogar')
+const fecharComo = document.getElementById('fechar_como_jogar')
 
-/* POPUP COMO JOGAR */
-btnAbrirComoJogar.addEventListener("click", function () {
-  popupComoJogar.classList.add("ativo");
-});
+abrirComo.addEventListener('click', () => {
+  popupComo.classList.add('ativo')
+})
 
-btnFecharComoJogar.addEventListener("click", function () {
-  popupComoJogar.classList.remove("ativo");
-});
+fecharComo.addEventListener('click', () => {
+  popupComo.classList.remove('ativo')
+})
 
-popupComoJogar.addEventListener("click", function (e) {
-  if (e.target === popupComoJogar) {
-    popupComoJogar.classList.remove("ativo");
+popupComo.addEventListener('click', (e) => {
+  if (e.target === popupComo) {
+    popupComo.classList.remove('ativo')
   }
-});
-
-
-/* SELETOR DE JOGADORES */
-opcoesJogadores.forEach(opcao => {
-  opcao.addEventListener('click', function () {
-    opcoesJogadores.forEach(op => op.classList.remove('ativo'));
-    this.classList.add('ativo');
-
-    const novaUrl = this.getAttribute('data-url');
-    btnJogar.href = novaUrl;
-  });
-});
-
-
-/* TOCAR MÚSICA NO PRIMEIRO CLIQUE */
-document.body.addEventListener('click', tocarMusica, { once: true });
+})
